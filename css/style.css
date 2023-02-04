@@ -1,0 +1,92 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+    padding: 0;
+}
+
+#myImage {
+  position: absolute;
+  /* Add the blur effect */
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+
+  max-width: 100%;
+  min-height: 150vh;
+/*   min-width: 1024px; */
+/*   top:0;
+  bottom:0; */
+  padding:0px;
+  margin:auto;
+}
+
+#topBanner{
+  text-align:center;
+  padding:10px 10px 10px 0px;
+  background-color:black;
+  color:white;
+}
+#landingSection{
+  position: relative;
+  margin:auto;
+  color:white;
+  padding-top:15px;
+  padding-bottom:40px;
+}
+#landingSection #firstP{
+  font-size:64px;
+  font-weight:normal;
+  text-align:center;
+  line-height:70px;
+  
+}
+#landingSection #lastP{
+  font-size:25px;
+  font-weight:400;
+  text-align:center;
+  line-height:30px;
+}
+#landingSection #secondP{
+  font-size:28px;
+  font-weight:400;
+  font-style:normal;
+  font-family:"Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif;
+  text-align:center;
+}
+#authButton{
+  height:65px;
+  width:300px;
+  font-size:30px;
+  text-align:center;
+  color: white;
+  background-color:transparent;
+  display: inline-block;
+  border-color: red;
+}
+
+input::placeholder {
+  color: grey;
+  padding-left:20px;
+  font-size: 20px;
+  font-style: italic;
+}
+#authButton:hover{
+  background: linear-gradient(to right, #e10505 50%, #fcfcfd 50%) right;
+  color: red;
+  background-size: 200% 100%;
+  transition:all 1s ease;
+}
+#email{
+  height:60px;
+  width:300px;
+  border-radius:2px;
+  padding-left:20px;
+  padding-right:20px;
+  font-size:20px;
+  line-height:10px;
+  background-color:black;
+  border-color:white;
+}
+#buttonDiv{
+  text-align:center;
+}
