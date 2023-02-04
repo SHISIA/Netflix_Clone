@@ -2,22 +2,19 @@ body {
   height: 100vh;
   width: 100vw;
   margin: 0;
-    padding: 0;
+  padding: 0;
+  background-color: black;
 }
 
 #myImage {
   position: absolute;
   /* Add the blur effect */
-  filter: blur(1px);
-  -webkit-filter: blur(1px);
-
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+  background-size: cover;
   max-width: 100%;
-  min-height: 150vh;
-/*   min-width: 1024px; */
-/*   top:0;
-  bottom:0; */
+  min-height: 120vh;
   padding:0px;
-  margin:auto;
 }
 
 #topBanner{
@@ -34,29 +31,41 @@ body {
   padding-bottom:40px;
 }
 #landingSection #firstP{
-  font-size:64px;
+  font-size:10vw;
   font-weight:normal;
   text-align:center;
-  line-height:70px;
+  line-height:50px;
+/*   word-wrap: break-word; */
   
 }
-#landingSection #lastP{
-  font-size:25px;
-  font-weight:400;
-  text-align:center;
-  line-height:30px;
-}
+
 #landingSection #secondP{
-  font-size:28px;
+  font-size:7vw;
   font-weight:400;
+  line-height:30px;
   font-style:normal;
   font-family:"Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif;
   text-align:center;
+  word-wrap: break-word;
+
 }
+
+#landingSection #lastP{
+  font-size:5vw;
+  font-weight:400;
+  text-align:center;
+  line-height:20px;
+  padding:20px;
+  word-wrap: break-word;
+
+}
+
 #authButton{
   height:65px;
   width:300px;
   font-size:30px;
+  padding-left:20px;
+  padding-right:20px;
   text-align:center;
   color: white;
   background-color:transparent;
@@ -79,9 +88,9 @@ input::placeholder {
 #email{
   height:60px;
   width:300px;
-  border-radius:2px;
-  padding-left:20px;
-  padding-right:20px;
+/*   border-radius:2px; */
+/*   padding-left:20px;
+  padding-right:20px; */
   font-size:20px;
   line-height:10px;
   background-color:black;
@@ -89,4 +98,26 @@ input::placeholder {
 }
 #buttonDiv{
   text-align:center;
+}
+#adminMessage p{
+  background-color:black;
+    filter: blur(.5px);
+    -webkit-filter: blur(.5px);
+
+  height: 70vh;
+  padding: 50px;
+  text-align: center;
+  
+}
+
+span{
+  font-style:normal;
+  line-height: 20px;
+  font-family: sans 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+  color:white;
+}
+#adminSpan{
+  font-size: 30px;
+  font-style: italic;
 }
