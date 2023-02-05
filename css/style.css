@@ -1,200 +1,248 @@
-body {
-  height: 100vh;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-  background-color: black;
+body{
+    background-color:#090A0E ;
+    color: aliceblue;
+    margin: 0;
+    padding: 0;
 }
 
-#myImage {
-  position: absolute;
-  /* Add the blur effect */
-  filter: blur(2px);
-  -webkit-filter: blur(2px);
-  background-size: cover;
-  max-width: 100%;
-  min-height: 120vh;
-  padding:0px;
+#fixedImage{
+    position:fixed;
+    height: auto;
+    width: 100vw;
+    height: 100vh;
+    margin: 0%;
+    padding: 0%;
 }
 
-#topBanner{
-  text-align:center;
-  padding:10px 10px 10px 0px;
-  background-color:black;
-  color:white;
+/* menu style */
+#menu{
+    position: relative;
+    background-color:rgba(63, 41, 64, 0.2);
+    display: flexbox;
+    text-align: center;
+    padding-top: 10px;
+    margin: 0;
 }
-#landingSection{
-  position: relative;
-  margin:auto;
-  color:white;
-  padding-top:15px;
-  padding-bottom:40px;
+/* menu item style */
+#menu button{
+    background-color:transparent;
+    border-color: transparent;
+    font-size: medium;
+    font-weight: bold;
+    color: rgb(254, 247, 247);
+    padding:5px 4px 3px 2px;
+    -webkit-text-stroke-width: .1px;
+    -webkit-text-stroke-color: black;
 }
-#landingSection #firstP{
-  font-size:10vw;
-  font-weight:normal;
-  text-align:center;
-  line-height:50px;
-/*   word-wrap: break-word; */
-  
-}
-
-#landingSection #secondP{
-  font-size:7vw;
-  font-weight:400;
-  line-height:30px;
-  font-style:normal;
-  font-family:"Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif;
-  text-align:center;
-  word-wrap: break-word;
-
+/* the button and searchField Div */
+#searchSubmit{
+    display: inline;
+    padding-left: 10px;
+    text-align: center;
+    background-color: transparent;
+    /* width: 100vw; */
+    margin: 0;
 }
 
-#landingSection #lastP{
-  font-size:5vw;
-  font-weight:400;
-  text-align:center;
-  line-height:20px;
-  padding:20px;
-  word-wrap: break-word;
-
+/* search button and input */
+#searchSubmit input{
+    width: 35vw;
+    height: 4vh;
+    background-color: transparent;
+    border: transparent;
+    font-size: 20px;
+}
+#submitIcon{
+    width:5vw;
+    height: 10vh;
+    background-color: transparent;
+}
+#submit{
+    border-color: #090A0E;
+}
+/* Button Hover effects */
+#menu button:hover{
+    color: red;
 }
 
-#authButton{
-  height:65px;
-  width:300px;
-  font-size:30px;
-  padding-left:20px;
-  padding-right:20px;
-  text-align:center;
-  color: white;
-  background-color:transparent;
-  display: inline-block;
-  border-color: red;
+input::placeholder{
+    color: #646497;
+    text-decoration: underline;
+    text-decoration-color: rgb(15, 3, 3);
+    font-size: 20px;
+}
+/* End of the menu Div Styling  */
+
+/* The Cover Image Div Info Styling */
+
+.coverTitle{
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
+    padding: 50px;
+    margin: 0;
+}
+.coverTitle{
+    margin: 0;
+    color: white;
+    background-color: transparent;
+    font-size: 80px;
+    font-weight: bold;
+    word-wrap: break-word;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#info{
+    position: relative;
+    background-color: transparent;
 }
 
-input::placeholder {
-  color: grey;
-  padding-left:20px;
-  font-size: 20px;
-  font-style: italic;
+/* movie summary */
+#coverInfo{
+    background-color:rgba(26, 5, 27, 0.6);
+    position: relative;
+    font-size: 15px;
+    word-wrap: break-word;
+    line-height: 20px;
+    line-height: 20px;
+    font-weight: 300;
+    margin: 0;
+    padding: 20px;
 }
-#authButton:hover{
-  background: linear-gradient(to right, #e10505 50%, #fcfcfd 50%) right;
-  color: red;
-  background-size: 200% 100%;
-  transition:all 1s ease;
+.innerTitle{
+    background-color: transparent;
+    margin: 0;
+    color: #e10505;
+    font-weight: bold;
+    font-size: medium;
 }
-#email{
-  height:60px;
-  width:300px;
-  font-size:20px;
-  line-height:10px;
-  background-color:black;
-  border-color:white;
-}
-#buttonDiv{
-  text-align:center;
-}
-#adminMessage p{
-  background-color:black;
-    filter: blur(.5px);
-    -webkit-filter: blur(.5px);
-  
-  height: 70vh;
-  padding: 50px;
-  text-align: center;
+/* styling the first letter of movie summary. Named it t because I use The Meg as a dev`elopment film */
+#t{
+    color: rgb(234, 20, 20);
+    background-color: transparent;
+    font-size: 40px;
+    font-weight: bold;
 }
 
-span{
-  font-style:normal;
-  line-height: 20px;
-  font-family: sans 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 20px;
-  color:white;
+/* watch Button  styling */
+#watchMovie{
+    background-color: red;
+    height: 6vh;
+    width: 35vw;
+    border-color: red;
+    -webkit-text-stroke-width: 0px;
+    font-size: 18px;
+    color: white;
+    font-weight:bold;
+    margin: 0;
 }
-#adminSpan{
-  font-size: 30px;
-  font-style: italic;
-  color:red;
-}
-
-/*Desktop/Laptop/External Display view*/
-@media only screen and (min-width:768px){
-  
-  #landingSection #firstP{
-  font-size:70px;
-  font-weight:normal;
-  text-align:center;
-  line-height:70px;
-}
-
-#landingSection #secondP{
-  font-size:40px;
-  font-weight:400;
-  line-height:10px;
-  font-style:normal;
-  font-family:"Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif;
-  text-align:center;
-  word-wrap: break-word;
-
-}
-
-#landingSection #lastP{
-  font-size:30px;
-  font-weight:400;
-  text-align:center;
-  line-height:20px;
-  padding:20px;
-  word-wrap: break-word;
-
-}
-  
-  #email{
-  height:60px;
-  width:300px;
-  border-radius:2px;
-  padding-left:20px;
-  padding-right:20px;
-  font-size:20px;
-  line-height:10px;
-  background-color:black;
-  border-color:white;
+/* watch button hover effect */
+#watchMovie:hover{
+    background: linear-gradient(to right, #e10505 50%, #fcfcfd 50%) right;
+    color: red;
+    background-size: 200% 100%;
+    transition:all 1s ease;
+    cursor: pointer;
   }
-}
-/*End of Computer view*/
 
-/*Navigation Bar Styling*/
+  /* popular movies div */
+  #popular #coming{
+    padding-top: 30px;
+    color: rgb(0, 0, 0);
+    font-size:6vw;
+    position: relative;
+    text-align: center;
+    background-color:#090A0E;
+    font-weight: bold;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    -webkit-text-stroke-width: .3px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+    position: fixed;
+  }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding:0;
-  width: 100vw;
-  background-color: #000000;
-  text-align:right;
-}
+  #coming , #popular{
+    padding-top: 30px;
+    color: rgb(0, 0, 0);
+    font-size:6vw;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+    background-color:#090A0E;
+    word-wrap:break-word;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    -webkit-text-stroke-width: .3px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+  }
 
-li a {
-  display: block;
-  color: #ffffff;
-  padding:5px 40px 5px 5px;
-  text-align:right;
-  text-decoration: none;
-  font-size:20px;
-}
-#barToggle{
-/*   padding:10px 40px 10px 10px; */
-  display:flex;
-}
+  /* middle div sstyling */
+  #middleDiv{
+    text-align: center;
+    background-color: #090A0E;
+    padding-top: 10px;
+  }
 
-/* Change the link color on hover */
-li a:hover {
-  color: #e60a0a;
+  /* slogan css */
+  #slogan{
+    position: relative;
+    background-color: #090A0E;
+    color: #ff0606;
+    font-size: 32px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 50px 9px;
+  }
+/* contact icons */
+  #callIcon , #mailIcon{
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+  }
+#lastDiv{
+    position: relative;
+    text-align: center;
+    background-color: #090A0E;
+    color: white;
+    padding: 30px;
 }
-/*End Navigation Bar Styling*/
-
-#navBar{
-  display:block;
-  padding-top:20px;
+#call #email{
+    font-size: 25px;
+}
+#mailDiv{
+    display: inline;
+    text-align: center;
+}
+/* div containing contact infoimage buttons */
+#mailDiv button{
+    width: 70vw;
+    font-weight: bold;
+    text-align: left;
+    font-size: 15px;
+    text-align: left;
+    background-color: transparent;
+    color: #fcfcfd;
+    border-color: transparent;
+    padding: 10px;
+}
+#mailDiv button:hover{
+    cursor: pointer;
+    background: linear-gradient(to right, #f2ecec 50%, #00000f 50%) right;
+    color: rgb(255, 255, 255);
+    background-size: 200% 100%;
+    transition:all 1s ease;
+}
+/* div containing contact infoimage icons */
+#mailDiv img{
+    display: flex;
+}
+/* last Streamsee logo */
+#logo{
+    width: 80vw;
+}
+#movie{
+    background-color: #090A0E;
+    align-items: center;
+    text-align: center;
+}
+#middleDiv{
+    
 }

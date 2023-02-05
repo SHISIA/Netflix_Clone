@@ -1,53 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>NetFlix</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StreamSee</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <!--Navigation Bar-->
-  <div id="navBar">
+  <!--  This is the menu Items -->
+  <div id="fixedBackground">
+    <img id="fixedImage" src="/img/meg.jpg" alt="">
   </div>
-  <!--Navigation Bar-->
-  <div>
-  <img src="img/poster.jpg" id="myImage" class="image">
-  </div>
-  <div id="landingSection">
-    <p id="firstP">
-      Unlimited movies, TV shows, <br>Documentaries<br> and more.<br>
-    </p>
-    <p id="secondP">Watch anywhere. Stream anytime.</p>
-    <p id="lastP">Ready to watch? Enter your email to start your membership.
-    </p>
-
-    <div id="buttonDiv">
-      <input type="email" placeholder="Email address" id="email" name="email">
-      <button id="authButton" >Start Streaming</button>
-    </div>
-    <!-- end of top info landing section -->
-
-    <!--Admin paragraph-->
-    <div id="adminMessage">
-      <p><span>"Welcome to our movie website! Here you'll find all the latest information on the biggest and best films,
-          including reviews, trailers, and showtimes. Browse our extensive library of movies and discover new favorites,
-          or keep up with the latest releases. Get ready for an amazing cinematic experience!"</span>
-        <br>
-        <br>
-        <span id="adminSpan">Admin</span>
-      </p>
-      <!--Admin paragraph End-->
+  <div id="menu">
+    <button id="movies" class="menuItem">MOVIES</button>
+    <button id="shows" class="menuItem">SHOWS</button>
+    <button id="documentaries" class="menuItem">DOCUMENTARIES</button>
+    <button id="series" class="menuItem">SERIES</button>
+    <button id="contact" class="menuItem">CONTACT US</button>
+    <br>
+    <div id="searchSubmit">
+      <input type="text" placeholder="     Search                          " name="search" id="search">
+      <button type="submit" id="submit" class="menuItem">
+        <img id="submitIcon" style="height: 20px; width: 20px;" src="/img/search.png" alt="">
+      </button>
     </div>
   </div>
+  <div id="info">
+    <p class="coverTitle">
+      The <br>Meg
+      <br>
+      <button type="submit" id="watchMovie">Watch Now</button>
+    </p>
 
-  <div id="devicesDiv">
-    <img src="" id="computer">
-    <img src="" id="smartphone">
+    <p id="coverInfo">
+      <span class="innerTitle"><span id="t">T</span>he Meg</span> is a 2018 science fiction action horror film directed
+      by Jon Turteltaub. The film stars Jason Statham as a deep-sea rescue diver who must confront a giant prehistoric
+      shark known as the Megalodon, which has been awakened and is threatening the safety of the ocean and those in it.
+      With a star-studded cast and high-stakes action, <span id="inner">The Meg</span> is a thrilling adventure that
+      will keep you on the edge of your seat.
+    </p>
   </div>
+  <!-- End of menu Item  -->
+  <!-- popular movie posters -->
+  <div id="MiddleDiv">
+    <div id="movie">
+      <p id="popular">Trending Movies</p>
+      <br>
+    </div>
+    <div id="series">
+      <p id="coming">Coming Soon</p>
+    </div>
+  </div>
+  <div id="lastDiv">
+    <p id="slogan">Watch Anytime , Anywhere</p>
+    <div id="mailDiv">
+      <button><img src="/img/mail.png" alt="mailIcon" id="mailIcon">christineachando4@gmail.com</button>
+      <br>
+      <br>
+      <button><img src="img/call.png" alt="mailIcon" id="mailIcon">+254780809290</button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <img id="logo" src="/img/logo.png" alt="logo">
+    <br>
+    <br>
+    <br>
+    <p id="rights">Copyright &copy; 2023. All Rights Reserved</p>
+  </div>
+  <script src="/js/app.js"></script>
 </body>
-<script src="js/script.js"></script>
+
 </html>
