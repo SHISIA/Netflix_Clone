@@ -9,7 +9,7 @@ body{
     position:fixed;
     height: auto;
     width: 100vw;
-    height: 100vh;
+    height: 70vh;
     margin: 0%;
     padding: 0%;
 }
@@ -20,19 +20,20 @@ body{
     background-color:rgba(63, 41, 64, 0.2);
     display: flexbox;
     text-align: center;
-    padding-top: 10px;
-    margin: 0;
+    padding-top: 20px;
+    margin:0px;
 }
 /* menu item style */
-#menu button{
+#menu a{
     background-color:transparent;
     border-color: transparent;
     font-size: medium;
-    font-weight: bold;
+    text-align: center;
+    font-weight: lighter;
     color: rgb(254, 247, 247);
     padding:5px 4px 3px 2px;
     -webkit-text-stroke-width: .1px;
-    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-color: #090A0E;
 }
 /* the button and searchField Div */
 #searchSubmit{
@@ -40,7 +41,6 @@ body{
     padding-left: 10px;
     text-align: center;
     background-color: transparent;
-    /* width: 100vw; */
     margin: 0;
 }
 
@@ -48,21 +48,26 @@ body{
 #searchSubmit input{
     width: 35vw;
     height: 4vh;
-    background-color: transparent;
     border: transparent;
+    background-color: transparent;
+    border-bottom-color: #090A0E;
+    border-bottom-width: 4px;
     font-size: 20px;
 }
+
 #submitIcon{
     width:5vw;
     height: 10vh;
     background-color: transparent;
 }
 #submit{
-    border-color: #090A0E;
+    border-color: transparent;
+    background-color: transparent;
 }
 /* Button Hover effects */
-#menu button:hover{
+#menu a:hover{
     color: red;
+    cursor: pointer;
 }
 
 input::placeholder{
@@ -77,15 +82,14 @@ input::placeholder{
 
 .coverTitle{
     -webkit-text-stroke-width: 1.5px;
-    -webkit-text-stroke-color: black;
-    padding: 50px;
-    margin: 0;
+    -webkit-text-stroke-color: #090A0E;
+    padding: 40px;
 }
 .coverTitle{
     margin: 0;
     color: white;
     background-color: transparent;
-    font-size: 80px;
+    font-size: 60px;
     font-weight: bold;
     word-wrap: break-word;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -93,15 +97,16 @@ input::placeholder{
 #info{
     position: relative;
     background-color: transparent;
+    text-align: left;
+    margin: 15px;
 }
 
 /* movie summary */
 #coverInfo{
-    background-color:rgba(26, 5, 27, 0.6);
+    background-color:rgba(5, 0, 5, 0.6);
     position: relative;
     font-size: 15px;
     word-wrap: break-word;
-    line-height: 20px;
     line-height: 20px;
     font-weight: 300;
     margin: 0;
@@ -132,6 +137,7 @@ input::placeholder{
     font-size: 18px;
     color: white;
     font-weight:bold;
+    text-align: center;
     margin: 0;
 }
 /* watch button hover effect */
@@ -144,8 +150,9 @@ input::placeholder{
   }
 
   /* popular movies div */
-  #popular #coming{
+  #popular ,#coming{
     padding-top: 30px;
+    height: 90px;
     color: rgb(0, 0, 0);
     font-size:6vw;
     position: relative;
@@ -156,30 +163,23 @@ input::placeholder{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     -webkit-text-stroke-width: .3px;
     -webkit-text-stroke-color: rgb(255, 255, 255);
-    position: fixed;
   }
 
-  #coming , #popular{
-    padding-top: 30px;
-    color: rgb(0, 0, 0);
-    font-size:6vw;
+  #holder , #genres{
+    overflow: auto;
+    white-space: nowrap;
+    background-color: #090A0E;
+    padding-bottom: 20px;
     position: relative;
-    text-align: center;
-    font-weight: bold;
-    margin: 0;
-    background-color:#090A0E;
-    word-wrap:break-word;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    -webkit-text-stroke-width: .3px;
-    -webkit-text-stroke-color: rgb(255, 255, 255);
+  }
+
+  #genres{
+    background-color: #090A0E;
+    width:100%;
+    height:50%;
   }
 
   /* middle div sstyling */
-  #middleDiv{
-    text-align: center;
-    background-color: #090A0E;
-    padding-top: 10px;
-  }
 
   /* slogan css */
   #slogan{
@@ -204,6 +204,7 @@ input::placeholder{
     color: white;
     padding: 30px;
 }
+
 #call #email{
     font-size: 25px;
 }
@@ -215,7 +216,6 @@ input::placeholder{
 #mailDiv button{
     width: 70vw;
     font-weight: bold;
-    text-align: left;
     font-size: 15px;
     text-align: left;
     background-color: transparent;
@@ -225,7 +225,7 @@ input::placeholder{
 }
 #mailDiv button:hover{
     cursor: pointer;
-    background: linear-gradient(to right, #f2ecec 50%, #00000f 50%) right;
+    background: linear-gradient(to right, #f2ecec 50%, #090A0E 50%) right;
     color: rgb(255, 255, 255);
     background-size: 200% 100%;
     transition:all 1s ease;
@@ -240,9 +240,25 @@ input::placeholder{
 }
 #movie{
     background-color: #090A0E;
-    align-items: center;
     text-align: center;
 }
-#middleDiv{
-    
+
+::-webkit-scrollbar {
+    width: 0px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 5px;
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:transparent;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:white;
+    cursor: pointer;
+}
+#rights{
+    font-size: 13px;
 }

@@ -1,60 +1,132 @@
 // getting components for use
-const title = document.getElementsByClassName("coverTitle");
-const description=document.getElementById("coverInfo");
+const title = document.getElementById("movieTitle");
+const description = document.getElementById("coverInfo");
+const cover = document.getElementById("fixedImage")
 const movie = document.getElementById("movie");
 const series = document.getElementById("series")
+
 // components declared
 
- const loadPage = (from,to) => {
-    for(let i=Number(from);i<Number(to);i++){
-        getRandomMovieById(i);
-    }
-}
+// trending movies
+async function getCategories(index) {
+  let imagePath = "https://image.tmdb.org/t/p/w500";
+  let myObject = await fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=f3fa058a0294c6f7b1d786efd12e5aa0&language=en-US`)
+  let myText = await myObject.json();
 
-async function getRandomMovieById(number) {
-    let imagePath="https://image.tmdb.org/t/p/w500";
-    let myObject=await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=f3fa058a0294c6f7b1d786efd12e5aa0`)
-    let myText = await myObject.json();
-
-    movie.innerHTML+=
-    `<img onclick="" src="${imagePath}${myText.results[number].poster_path}" alt="Movie" style="
+  genres.innerHTML +=
+    `<div style="
     position:relative;
-     width:85vw; 
-     height:40vh; 
+     background-color:#090A0E;
+     display:inline-block;
+     padding:2px;
+     text-align:center;
+     ">
+    <img onclick="" src="${imagePath}${myText.results[index].poster_path}" alt="Movie" style="
+    position:relative;
+     width:38vw; 
+     height:30vh; 
      background-color:#090A0E;
      padding:15px;
-     border-color:black;
-     display:inline;"
+     display:inline-block;"
      padding:10px;
      >
-     <p style="position:relative;">${myText.results[number].title}</p>
+     <br>
+     <button style="position:relative; 
+     height:7vh;
+     border-color:white;
+      padding:7px; 
+     width:38vw;
+     background-color:red;
+     color:white;
+     font-size:13px;
+     border-color:red;
+     line-height: 35px;
+     text-align:center;
+     letter-spacing:6px;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     border-radius:3px;
+     ">Trailer</button>
+     <br>
+     <br>
+    </div>
      `
-     console.log(myText)
+}
+
+// https://api.themoviedb.org/3/genre/movie/list?api_key=<<api_key>>&language=en-US
+
+// trending tv shows api request
+async function getRandomMovieById(index) {
+  let imagePath = "https://image.tmdb.org/t/p/w500";
+  let myObject = await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=f3fa058a0294c6f7b1d786efd12e5aa0`)
+  let myText = await myObject.json();
+
+  holder.innerHTML +=
+    `<div style="
+    position:relative;
+     background-color:#090A0E;
+     border-color:white;
+     display:inline-block;
+     padding:2px;
+     text-align:center;
+     ">
+    <img onclick="" src="${imagePath}${myText.results[index].poster_path}" alt="Movie" style="
+    position:relative;
+    border-color:white;
+     width:41vw; 
+     height:33vh; 
+     background-color:#090A0E;
+     padding:15px;
+     display:inline-block;"
+     padding:10px;
+     >
+     <br>
+     <button style="position:relative; 
+     height:7vh;
+     border-color:white;
+      padding:7px; 
+     width:38vw;
+     background-color:red;
+     color:white;
+     font-size:13px;
+     border-color:red;
+     line-height: 35px;
+     text-align:center;
+     letter-spacing:6px;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     border-radius:3px;
+     ">Trailer</button>
+     <br>
+     <br>
+    </div>
+     `
+}
+
+//set up cover movie from trending
+async function setCover() {
+  let imagePath = "https://image.tmdb.org/t/p/w500";
+  let myObject = await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=f3fa058a0294c6f7b1d786efd12e5aa0`)
+  let myText = await myObject.json();
+  console.log("my data ", myText);
+  cover.src = `${imagePath}${myText.results[9].poster_path}`;
+  description.innerText = `${myText.results[9].overview}`;
+  title.innerText = `${myText.results[9].original_title}`;
+}
+
+const loadPage = (from, to) => {
+  for (let i = Number(from); i < Number(to); i++) {
+    getRandomMovieById(i);
+    getCategories(i);
   }
+  setCover();
+}
 
 async function getMovieByName(movieName) {
-    const nameArray = movieName.split(" ");
-    const finalName= nameArray.join("+");
-    console.log(finalName)
-    // let response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=f3fa058a0294c6f7b1d786efd12e5aa0&query=${finalName}`);
-    let object = await response.json();
-    console.log("kghcf ",object)
-  }
-//   getText();
-// loadPage(89)
-// getMovieByName("popular")
-window.onload = loadPage(15,19);
-// adult: false
-// backdrop_path: null
-// genre_ids: [99]
-// id: 1045592
-// original_language: "en"
-// original_title: "Jack Reacher: When the Man Comes Around"
-// overview: "Cast and crew speak on adapting One Shot as the first Jack Reacher film, casting Tom Cruise, earning Lee Child's blessing, additional character qualities and the performances that shape them, Lee Child's cameo in the film, and shooting the film's climax."
-// popularity: 10.203
-// poster_path: null
-// release_date: "2013-05-07"
-// title: "Jack Reacher: When the Man Comes Around"
-// video: false
-// vote_average: 0
-// vote_count: 0
+  const nameArray = movieName.split(" ");
+  const finalName = nameArray.join("+");
+  console.log(finalName)
+  // let response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=f3fa058a0294c6f7b1d786efd12e5aa0&query=${finalName}`);
+  let object = await response.json();
+}
+
+//execution calls
+window.onload = loadPage(0, 9);
